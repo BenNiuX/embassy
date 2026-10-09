@@ -7,7 +7,7 @@ use crate::interrupt::typelevel::Binding;
 /// Convenience wrapper, contains a channel and a request number.
 ///
 /// Commonly used in peripheral drivers that own DMA channels.
-pub(crate) struct ChannelAndRequest<'d> {
+pub struct ChannelAndRequest<'d> {
     pub channel: Channel<'d>,
     pub request: Request,
 }

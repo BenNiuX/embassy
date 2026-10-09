@@ -396,7 +396,7 @@ pub struct UartTx<'d, M: Mode> {
     _tx: Option<Flex<'d>>,
     cts: Option<Flex<'d>>,
     _de: Option<Flex<'d>>,
-    tx_dma: Option<ChannelAndRequest<'d>>,
+    pub tx_dma: Option<ChannelAndRequest<'d>>,
     duplex: Duplex,
     _phantom: PhantomData<M>,
 }
@@ -445,7 +445,7 @@ pub struct UartRx<'d, M: Mode> {
     kernel_clock: Hertz,
     rx: Option<Flex<'d>>,
     rts: Option<Flex<'d>>,
-    rx_dma: Option<ChannelAndRequest<'d>>,
+    pub rx_dma: Option<ChannelAndRequest<'d>>,
     detect_previous_overrun: bool,
     #[cfg(any(usart_v1, usart_v2))]
     buffered_sr: regs::Sr,
